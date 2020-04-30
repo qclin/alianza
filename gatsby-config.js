@@ -1,16 +1,47 @@
+require("dotenv").config()
+
+const sourceAirtable = {
+  resolve: "gatsby-source-airtable",
+  options: {
+    apiKey: process.env.AIRTABLE_API_KEY, // may instead specify via env, see below
+    tables: [
+      {
+        baseId: process.env.AIRTABLE_BASE_ID,
+        tableName: "THEMES",
+      },
+    ],
+  },
+}
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Alianza de pino-encino`,
+    description: `para la Conservacion de los Bosques de Pino-Encino de Mesoamerica`,
+    author: `Studio Hold`,
+    authorLink: "https://theholding.page/",
+    openGraph: {
+      title: "Alianza de pino-encino",
+      description:
+        "para la Conservacion de los Bosques de Pino-Encino de Mesoamerica",
+      url: "https://alianzapinoencino.com ",
+      image: "./en_collage.png",
+    },
   },
   plugins: [
+    "gatsby-plugin-sass",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `media`,
+        path: `${__dirname}/public/media/`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -27,6 +58,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    sourceAirtable,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -1,0 +1,13 @@
+.vertical-text {
+  transform-origin: 0 0;
+  transform: rotate(-90deg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+}
+
+.page-nav {
+  height: 100vh;
+  border: 1px solid $alianza-apple;
+}

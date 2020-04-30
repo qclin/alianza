@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Amare-Alta";
+  src: url("/fonts/Amare-Alta/Amare-Alta.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/Amare-Alta/Amare-Alta.otf") format("opentype"),
+    url("/fonts/Amare-Alta/Amare-Alta.woff") format("woff"),
+    url("/fonts/Amare-Alta/Amare-Alta.ttf") format("truetype"),
+    url("/fonts/Amare-Alta/Amare-Alta.svg#Amare-Alta") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.Subheader {
+  font-family: "Amare-Alta";
+  font-size: 50px;
+  font-weight: normal;
+  color: $alianza-apple;
+}
+
+.Titles:hover {
+  font-family: "Amare-Alta";
+  font-size: 25px;
+  line-height: 1.16;
+  font-weight: normal;
+  color: $alianza-gray;
+}
+
+.Titles {
+  font-family: "Amare-Alta";
+  font-size: 25px;
+  font-weight: normal;
+  color: $alianza-apple;
+}
+
+body {
+  font-family: "Amare-Alta";
+  font-size: 25px;
+  line-height: 1.16;
+  color: $alianza-apple;
+}
+
+.top-nav-text:hover {
+  font-family: "Amare-Alta";
+  font-size: 20px;
+  text-align: center;
+  font-weight: normal;
+  color: $alianza-gray;
+}
+
+.top-nav-text {
+  font-family: "Amare-Alta";
+  font-size: 20px;
+  text-align: center;
+  color: $pinkish-orange;
+}

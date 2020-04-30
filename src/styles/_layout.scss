@@ -1,0 +1,45 @@
+.page-view {
+  display: none;
+  &.active {
+    display: block;
+  }
+  .content {
+    position: relative;
+    top: 80vh;
+  }
+}
+
+.page-nav {
+  position: relative;
+  width: 2rem;
+  transition: width 1s;
+  &.active {
+    width: calc(100% - 10rem);
+    .nav-index {
+      display: none;
+    }
+  }
+}
+
+.active {
+  .overlay {
+    top: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: $alianza-apple;
+    animation: fade-out 0.5s ease-in-out 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+#language-toggle {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+}
+
+#media-player {
+  position: absolute;
+}
