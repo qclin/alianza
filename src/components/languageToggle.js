@@ -2,15 +2,16 @@ import React from "react"
 import { languageOptions } from "../utils/languageOptions"
 
 const LanguageToggle = ({ setLanguage }) => {
-  const keys = Object.keys(languageOptions)
+  const options = Object.keys(languageOptions)
   return (
     <div id="language-toggle">
-      {keys.map(key => (
+      {options.map(option => (
         <button
+          key={option}
           className="top-nav-text"
-          onClick={() => setLanguage(languageOptions[key])}
+          onClick={() => setLanguage(languageOptions[option])}
         >
-          {key.toLowerCase()}
+          {option.toLowerCase()}
         </button>
       ))}
     </div>

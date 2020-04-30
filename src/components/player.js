@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const Player = ({ index }) => {
   const media = useStaticQuery(graphql`
@@ -11,6 +12,12 @@ const Player = ({ index }) => {
           prettySize
           name
           relativePath
+          childImageSharp {
+            fluid(maxWidth: 2000, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          publicURL
         }
       }
     }
@@ -19,20 +26,23 @@ const Player = ({ index }) => {
   const mediaForTheme = media.files.nodes.filter(data =>
     data.name.includes(index)
   )
-  const isVideo = mediaForTheme[0].extension == "mp4"
+  const isVideo = mediaForTheme[0].extension === "mp4"
 
   return (
     <div id="media-player">
       {isVideo ? (
         <video autoPlay loop>
-          <source
-            src={`/media/${mediaForTheme[0].relativePath}`}
-            type="video/mp4"
-          />
+          <source src={`${mediaForTheme[0].publicURL}`} type="video/mp4" />
         </video>
       ) : (
         mediaForTheme.map(image => (
-          <img key={image.name} src={`/media/${image.relativePath}`} />
+          <Img
+            className="w-100"
+            key={image.name}
+            fluid={image.childImageSharp.fluid}
+            objectFit="cover"
+            objectPosition="50% 50%"
+          />
         ))
       )}
     </div>

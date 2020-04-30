@@ -6,9 +6,6 @@ import Themes from "../components/themes"
 import LangaugeToggle from "../components/languageToggle"
 import { languageOptions } from "../utils/languageOptions"
 
-import Image from "../components/image"
-import SEO from "../components/seo"
-
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query ThemeQuery {
@@ -30,7 +27,7 @@ const IndexPage = () => {
   `)
   const [language, setLanguage] = useState(languageOptions.ES)
   const dataEntries = data.themes.nodes.filter(
-    item => item.data.Language == language
+    item => item.data.Language === language
   )
 
   return (
