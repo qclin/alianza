@@ -43,4 +43,10 @@
 #media-player {
   width: 100vw;
   position: absolute;
+  video,
+  img {
+    opacity: 0; // doesn't work so well for images
+    animation: fade-in 1s ease-in 1s;
+    animation-fill-mode: forwards;
+  }
 }

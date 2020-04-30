@@ -22,7 +22,6 @@ const Player = ({ index }) => {
       }
     }
   `)
-
   const mediaForTheme = media.files.nodes.filter(data =>
     data.name.includes(index)
   )
@@ -31,7 +30,7 @@ const Player = ({ index }) => {
   return (
     <div id="media-player">
       {isVideo ? (
-        <video autoPlay loop>
+        <video autoPlay loop key={mediaForTheme[0].publicURL}>
           <source src={`${mediaForTheme[0].publicURL}`} type="video/mp4" />
         </video>
       ) : (

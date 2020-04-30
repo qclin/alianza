@@ -8,7 +8,6 @@ const Themes = ({ dataEntries }) => {
   return (
     <div>
       <Player index={activeTheme + 1} />
-
       <nav className="flex">
         {dataEntries.map((node, index) => (
           <a
