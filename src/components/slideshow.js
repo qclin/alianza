@@ -6,7 +6,7 @@ const SlideShow = ({ images }) => {
   const [slideIndex, setSlideIndex] = useState(0)
 
   useInterval(() => {
-    if (slideIndex == images.length - 1) {
+    if (slideIndex === images.length - 1) {
       setSlideIndex(0)
     } else {
       setSlideIndex(slideIndex + 1)
