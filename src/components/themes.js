@@ -2,30 +2,24 @@ import React, { useState } from "react"
 
 import Theme from "./theme"
 import Player from "./player"
+import About from "./about"
 
 const Themes = ({ dataEntries }) => {
-  const [activeTheme, setActiveTheme] = useState(0)
+  const [active, setActive] = useState(0)
   return (
     <div>
-      <Player index={activeTheme + 1} />
-      <nav className="flex">
+      {active > 0 && <Player themeIndex={active} />}
+      <section className="flex">
+        <About active={active} setActive={setActive} />
         {dataEntries.map((node, index) => (
-          <a
-            className={activeTheme === index ? "page-nav active" : "page-nav"}
-            href={`#${node.data.Identifier}`}
-            key={index}
-            onClick={() => setActiveTheme(index)}
-          >
-            <div className="nav-index top-nav-text">
-              <span>0{index + 1}</span>
-              <div className="vertical-text">
-                {node.data.Identifier.replace(/_/g, " ")}
-              </div>
-            </div>
-            <Theme data={node.data} active={activeTheme === index} />
-          </a>
+          <Theme
+            data={node.data}
+            active={active}
+            setActive={setActive}
+            themeIndex={index + 1}
+          />
         ))}
-      </nav>
+      </section>
     </div>
   )
 }

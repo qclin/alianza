@@ -1,13 +1,20 @@
+.logoText {
+  font-family: "Amare-Medium";
+  font-size: 21.563rem;
+  font-weight: normal;
+  line-height: 0.75;
+}
+
 .Subheader {
   font-family: "Amare-Alta";
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: normal;
-  color: $alianza-apple;
+  // color: $alianza-apple;
 }
 
 .Titles:hover {
   font-family: "Amare-Alta";
-  font-size: 25px;
+  font-size: 1.563;
   line-height: 1.16;
   font-weight: normal;
   color: $alianza-gray;
@@ -15,21 +22,21 @@
 
 .Titles {
   font-family: "Amare-Alta";
-  font-size: 25px;
+  font-size: 1.563;
   font-weight: normal;
   color: $alianza-apple;
 }
 
 body {
   font-family: "Amare-Alta";
-  font-size: 25px;
+  font-size: 1.563;
   line-height: 1.16;
   color: $alianza-apple;
 }
 
 .top-nav-text:hover {
   font-family: "Amare-Alta";
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: center;
   font-weight: normal;
   color: $alianza-gray;
@@ -37,7 +44,14 @@ body {
 
 .top-nav-text {
   font-family: "Amare-Alta";
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: center;
   color: $pinkish-orange;
+}
+#logo {
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+  margin-left: 15%;
+  mix-blend-mode: lighten;
 }

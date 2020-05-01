@@ -2,8 +2,9 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 import Themes from "../components/themes"
-import LangaugeToggle from "../components/languageToggle"
+import LanguageToggle from "../components/languageToggle"
 import { languageOptions } from "../utils/languageOptions"
 
 const IndexPage = () => {
@@ -32,7 +33,8 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <LangaugeToggle setLanguage={setLanguage} />
+      <Seo />
+      <LanguageToggle setLanguage={setLanguage} />
       <Themes dataEntries={dataEntries}></Themes>
     </Layout>
   )

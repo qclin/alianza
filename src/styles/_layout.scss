@@ -13,6 +13,13 @@
   position: relative;
   width: 2rem;
   transition: width 1s;
+  &.inactive:hover {
+    background: $alianza-apple;
+    width: 3rem;
+    .nav-index {
+      color: #fff;
+    }
+  }
   &.active {
     width: calc(100% - 10rem);
     .nav-index {
