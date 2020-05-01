@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import SlideShow from "./slideshow"
 
 const Player = ({ index }) => {
   const media = useStaticQuery(graphql`
@@ -34,15 +34,7 @@ const Player = ({ index }) => {
           <source src={`${mediaForTheme[0].publicURL}`} type="video/mp4" />
         </video>
       ) : (
-        mediaForTheme.map(image => (
-          <Img
-            className="w-100"
-            key={image.name}
-            fluid={image.childImageSharp.fluid}
-            objectFit="cover"
-            objectPosition="50% 50%"
-          />
-        ))
+        <SlideShow images={mediaForTheme} />
       )}
     </div>
   )
