@@ -13,6 +13,24 @@ const sourceAirtable = {
   },
 }
 
+const sourceWebFont = {
+  resolve: "gatsby-plugin-web-font-loader",
+  options: {
+    custom: {
+      families: ["Amare-Alta, Amare-Linnea, Amare-Medium"],
+      urls: ["/fonts/fonts.css"],
+    },
+  },
+}
+
+const sourceFileMedia = {
+  resolve: `gatsby-source-filesystem`,
+  options: {
+    name: `media`,
+    path: `${__dirname}/src/media/`,
+  },
+}
+
 module.exports = {
   siteMetadata: {
     title: `Alianza de pino-encino`,
@@ -37,13 +55,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `media`,
-        path: `${__dirname}/src/media/`,
-      },
-    },
+    sourceFileMedia,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -58,6 +70,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    sourceWebFont,
     sourceAirtable,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

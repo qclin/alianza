@@ -13,6 +13,7 @@ const Themes = ({ dataEntries }) => {
           <a
             className={activeTheme === index ? "page-nav active" : "page-nav"}
             href={`#${node.data.Identifier}`}
+            key={index}
             onClick={() => setActiveTheme(index)}
           >
             <div className="nav-index top-nav-text">
