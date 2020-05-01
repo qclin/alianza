@@ -33,7 +33,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Seo />
+      <Seo title="Alianza" />
       <LanguageToggle setLanguage={setLanguage} />
       <Themes dataEntries={dataEntries}></Themes>
     </Layout>

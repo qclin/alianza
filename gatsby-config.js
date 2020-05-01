@@ -1,4 +1,6 @@
-require("dotenv").config()
+require("dotenv").config({
+  path: `.env`,
+})
 
 const sourceAirtable = {
   resolve: "gatsby-source-airtable",
