@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Amare-Medium';
+  src: url('Amare-Medium.eot?#iefix') format('embedded-opentype'),  url('Amare-Medium.otf')  format('opentype'),
+	     url('Amare-Medium.woff') format('woff'), url('Amare-Medium.ttf')  format('truetype'), url('Amare-Medium.svg#Amare-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
