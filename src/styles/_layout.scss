@@ -50,6 +50,8 @@
 #media-player {
   width: 100vw;
   position: absolute;
+  max-height: 100vh;
+  overflow: hidden;
   video {
     opacity: 0;
     animation: fade-in 1s ease-in 1s;
