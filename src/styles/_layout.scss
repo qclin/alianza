@@ -5,26 +5,6 @@
   }
   .content {
     position: relative;
-    top: 80vh;
-  }
-}
-
-.page-nav {
-  position: relative;
-  width: 2rem;
-  transition: width 1s;
-  &.inactive:hover {
-    background: $alianza-apple;
-    width: 3rem;
-    .nav-index {
-      color: #fff;
-    }
-  }
-  &.active {
-    width: calc(100% - 10rem);
-    .nav-index {
-      display: none;
-    }
   }
 }
 
@@ -56,5 +36,43 @@
     opacity: 0;
     animation: fade-in 1s ease-in 1s;
     animation-fill-mode: forwards;
+  }
+}
+
+// small screen
+@media (max-width: 768px) {
+  .page-view {
+    &.active {
+      height: 100vh;
+    }
+  }
+  #media-player {
+    &.desktop {
+      display: none;
+    }
+    &.mobile {
+      display: block;
+    }
+    position: relative;
+    video {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .page-view {
+    .content {
+      top: 80vh;
+    }
+  }
+  #media-player {
+    &.desktop {
+      display: block;
+    }
+    &.mobile {
+      display: none;
+    }
   }
 }

@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom"
 import React, { useState } from "react"
 import { useSpring, animated } from "react-spring"
 
@@ -27,7 +26,7 @@ function Blob() {
             <AnimFeTurbulence
               type="fractalNoise"
               baseFrequency={freq}
-              numOctaves="1.5"
+              numOctaves="1"
               result="TURB"
               seed="8"
             />

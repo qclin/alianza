@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import SlideShow from "./slideshow"
 
-const Player = ({ themeIndex }) => {
+const Player = ({ themeIndex, inline = false }) => {
   const media = useStaticQuery(graphql`
     query MediaQuery {
       files: allFile(filter: { sourceInstanceName: { eq: "media" } }) {
@@ -28,7 +28,7 @@ const Player = ({ themeIndex }) => {
   const isVideo = mediaForTheme[0].extension === "mp4"
 
   return (
-    <div id="media-player">
+    <div id="media-player" className={inline ? "mobile" : "desktop"}>
       {isVideo ? (
         <video autoPlay loop key={mediaForTheme[0].publicURL}>
           <source src={`${mediaForTheme[0].publicURL}`} type="video/mp4" />

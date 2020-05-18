@@ -1,36 +1,37 @@
-.logoText {
+.logo-text {
   font-family: "Amare-Medium";
-  font-size: 25.563rem;
+  font-size: 9.5rem;
   font-weight: normal;
   line-height: 0.75;
   letter-spacing: -12px;
+  margin: 5rem auto;
 }
 
-.Subheader {
+.sub-header-text {
   font-family: "Amare-Alta";
-  font-size: 3.125rem;
+  font-size: 1.5625rem;
   font-weight: normal;
   // color: $alianza-apple;
 }
 
-.Titles:hover {
+.title-text:hover {
   font-family: "Amare-Alta";
-  font-size: 1.563;
+  font-size: 1.563rem;
   line-height: 1.16;
   font-weight: normal;
   color: $alianza-gray;
 }
 
-.Titles {
+.title-text {
   font-family: "Amare-Alta";
-  font-size: 1.563;
+  font-size: 1.563rem;
   font-weight: normal;
   color: $alianza-apple;
 }
 
 body {
   font-family: "Amare-Alta";
-  font-size: 1.563;
+  font-size: 1.125rem;
   line-height: 1.16;
   color: $alianza-apple;
 }
@@ -49,10 +50,26 @@ body {
   text-align: center;
   color: $pinkish-orange;
 }
+
 #logo {
   position: absolute;
   z-index: 3;
   color: #fff;
-  margin-left: 15%;
   mix-blend-mode: lighten;
+}
+
+// large screen
+@media (min-width: 768px) {
+  .logo-text {
+    font-size: 25.563rem;
+  }
+  .sub-header-text {
+    font-size: 3.125rem;
+  }
+  body {
+    font-size: 1.563rem;
+  }
+  #logo {
+    margin-left: 15%;
+  }
 }

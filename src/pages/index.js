@@ -18,7 +18,7 @@ const IndexPage = () => {
           data {
             Description
             Identifier
-            Summary
+            Subtitle
             Title
             Language
           }

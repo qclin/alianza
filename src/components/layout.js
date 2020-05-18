@@ -23,10 +23,6 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Support by{" "}
-          <a href="https://theholding.page">Hold</a>
-        </footer>
       </div>
     </>
   )
