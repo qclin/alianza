@@ -28,7 +28,7 @@ export default ({ data, active, setActive, themeIndex }) => {
             <Player themeIndex={themeIndex} inline />
           )}
           <h3 className="sub-heaeder-text ph3 pt3">{Subtitle}</h3>
-          <p className="measure pa3">{Description}</p>
+          <p className="measure pa3 mb5">{Description}</p>
         </div>
       </section>
     </a>

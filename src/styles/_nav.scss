@@ -5,6 +5,8 @@
     padding: 12px 21px;
     width: 100%;
     border: 1px solid $alianza-apple;
+    background: #fff;
+    z-index: 10;
   }
 
   #mobile-navigation {
@@ -16,17 +18,27 @@
     height: calc(100% - 48px);
     &.show {
       display: block;
-      position: absolute;
+      position: fixed;
       top: 0;
       z-index: 3;
       background: #fff;
     }
     .menu-row {
       width: 100vw;
-      height: calc(100% / 7);
-
+      height: calc(100% / 8);
+      position: relative;
+      border-bottom: 1px solid $alianza-apple;
       a {
+        position: absolute;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
         color: $alianza-apple;
+        width: calc(100% - 2rem);
+        span {
+          right: 0;
+        }
       }
     }
   }
@@ -59,18 +71,16 @@
       }
     }
   }
-}
 
-.menu-row {
-  position: relative;
-  border: 1px solid $alianza-apple;
+  .menu-row {
+    position: relative;
+    border: 1px solid $alianza-apple;
 
-  &.inactive:hover {
-    background: $alianza-apple;
-    .nav-index {
-      color: #fff;
+    &.inactive:hover {
+      background: $alianza-apple;
+      .nav-index {
+        color: #fff;
+      }
     }
-  }
-  &.active {
   }
 }

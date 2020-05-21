@@ -33,11 +33,20 @@ const Themes = ({ dataEntries }) => {
           </button>
         </div>
         <div id="menu-selection" className={menuVisible ? "show" : "hide"}>
-          <a href="/" onClick={() => setActive(0)}>
-            00
-          </a>
+          <div className="menu-row ph3">
+            <a href="/" onClick={() => setActive(0)} className="title-text">
+              <span className="fr ">00</span>
+            </a>
+          </div>
           {dataEntries.map((node, index) => (
-            <div key={node.data.Identifier} className="menu-row pa3">
+            <div
+              key={node.data.Identifier}
+              className={
+                active == index + 1
+                  ? "selected-row menu-row ph3"
+                  : "menu-row ph3"
+              }
+            >
               <a
                 href={`#${index}`}
                 onClick={() => {
@@ -47,7 +56,7 @@ const Themes = ({ dataEntries }) => {
                 className="title-text"
               >
                 {node.data.Title}
-                <span className="fr ">0{index + 1}</span>
+                <span className="fr title-text">0{index + 1}</span>
               </a>
             </div>
           ))}
