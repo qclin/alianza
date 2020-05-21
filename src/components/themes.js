@@ -7,19 +7,42 @@ import About from "./about"
 const Themes = ({ dataEntries }) => {
   const [active, setActive] = useState(0)
   const [menuVisible, setMenuVisible] = useState(false)
+  const themesPages = dataEntries.map(node => node.data)
+  console.log(themesPages)
   return (
-    <div>
+    <div className={menuVisible ? "menu-open" : ""}>
       {active > 0 && <Player themeIndex={active} />}
-      <section className="page-wrapper">
-        <About active={active} setActive={setActive} />
+      <section id="wrapper">
+        <About
+          active={active}
+          setActive={setActive}
+          setMenuVisible={setMenuVisible}
+        />
         {dataEntries.map((node, index) => (
-          <Theme
-            key={index}
-            data={node.data}
-            active={active}
-            setActive={setActive}
-            themeIndex={index + 1}
-          />
+          <div
+            className={
+              active === index + 1 && !menuVisible
+                ? "is-active container"
+                : "inactive container"
+            }
+            key={index + 1}
+          >
+            <a
+              className="container--inner"
+              href={`#${node.data.Identifier}`}
+              onClick={() => {
+                setMenuVisible(!menuVisible)
+                setActive(index + 1)
+              }}
+            >
+              <Theme
+                key={index}
+                data={node.data}
+                isActive={active === index + 1}
+                themeIndex={index + 1}
+              />
+            </a>
+          </div>
         ))}
       </section>
       <section id="mobile-navigation">
@@ -28,38 +51,8 @@ const Themes = ({ dataEntries }) => {
             className="c-apple"
             onClick={() => setMenuVisible(!menuVisible)}
           >
-            {" "}
             menu
           </button>
-        </div>
-        <div id="menu-selection" className={menuVisible ? "show" : "hide"}>
-          <div className="menu-row ph3">
-            <a href="/" onClick={() => setActive(0)} className="title-text">
-              <span className="fr ">00</span>
-            </a>
-          </div>
-          {dataEntries.map((node, index) => (
-            <div
-              key={node.data.Identifier}
-              className={
-                active == index + 1
-                  ? "selected-row menu-row ph3"
-                  : "menu-row ph3"
-              }
-            >
-              <a
-                href={`#${index}`}
-                onClick={() => {
-                  setActive(index + 1)
-                  setMenuVisible(!menuVisible)
-                }}
-                className="title-text"
-              >
-                {node.data.Title}
-                <span className="fr title-text">0{index + 1}</span>
-              </a>
-            </div>
-          ))}
         </div>
       </section>
     </div>

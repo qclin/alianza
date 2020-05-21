@@ -1,14 +1,15 @@
 .page-view {
   display: none;
-  &.active {
-    display: block;
-  }
   .content {
     position: relative;
   }
 }
 
-.active {
+.is-active .page-view {
+  display: block;
+}
+
+.is-active {
   .overlay {
     top: 0;
     position: absolute;
@@ -41,8 +42,8 @@
 
 // small screen
 @media (max-width: 768px) {
-  .page-view {
-    &.active {
+  .is-active {
+    .page-view {
       height: 100vh;
     }
   }

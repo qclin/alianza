@@ -8,7 +8,7 @@ const LanguageToggle = ({ setLanguage }) => {
       {options.map(option => (
         <button
           key={option}
-          className="top-nav-text"
+          className="preview"
           onClick={() => setLanguage(languageOptions[option])}
         >
           {option.toLowerCase()}

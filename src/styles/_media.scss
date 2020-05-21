@@ -2,19 +2,10 @@
   .mobile {
     display: none !important;
   }
-  .page-wrapper {
-    display: flex;
-  }
 }
 
 @media (max-width: 768px) {
   .mobile {
     display: block !important;
-  }
-  .theme-page {
-    display: none;
-    &.active {
-      display: block;
-    }
   }
 }
