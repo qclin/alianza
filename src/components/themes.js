@@ -33,7 +33,7 @@ const Themes = ({ dataEntries }) => {
                 setActive(index)
               }}
             >
-              {index == 0 ? (
+              {index === 0 ? (
                 <About
                   active={active}
                   setActive={setActive}
