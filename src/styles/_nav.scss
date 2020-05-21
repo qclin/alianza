@@ -12,33 +12,6 @@
   #mobile-navigation {
     display: block;
   }
-  // #menu-selection {
-  //   &.show {
-  //     display: block;
-  //     position: fixed;
-  //     top: 0;
-  //     z-index: 3;
-  //     background: #fff;
-  //   }
-  //   .menu-row {
-  //     width: 100vw;
-  //     height: calc(100% / 8);
-  //     position: relative;
-  //     border-bottom: 1px solid $alianza-apple;
-  //     a {
-  //       position: absolute;
-  //       position: absolute;
-  //       top: 50%;
-  //       -ms-transform: translateY(-50%);
-  //       transform: translateY(-50%);
-  //       color: $alianza-apple;
-  //       width: calc(100% - 2rem);
-  //       span {
-  //         right: 0;
-  //       }
-  //     }
-  //   }
-  // }
 }
 
 @media (min-width: 768px) {
@@ -53,31 +26,5 @@
     bottom: 0;
     left: 0;
     white-space: nowrap;
-  }
-  // .theme-page {
-  //   height: 100vh;
-  //   width: 2rem;
-  //   transition: width 1s;
-  //   &.inactive:hover {
-  //     width: 3rem;
-  //   }
-  //   &.active {
-  //     width: calc(100% - 10rem);
-  //     .preview {
-  //       display: none;
-  //     }
-  //   }
-  // }
-
-  .menu-row {
-    position: relative;
-    border: 1px solid $alianza-apple;
-
-    &.inactive:hover {
-      background: $alianza-apple;
-      .preview {
-        color: #fff;
-      }
-    }
   }
 }

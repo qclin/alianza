@@ -26,6 +26,13 @@
   width: 100%;
   text-align: center;
   z-index: 3;
+  button {
+    color: $alianza-apple;
+    &.active,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 #media-player {

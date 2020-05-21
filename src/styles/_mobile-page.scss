@@ -2,7 +2,6 @@
   height: 100%;
   display: -webkit-box;
   display: flex;
-  padding: 1px;
   -webkit-box-pack: center;
   justify-content: center;
   -webkit-transition: background-color 0.5s ease;
@@ -19,47 +18,14 @@
     flex-direction: column;
     -webkit-box-pack: start;
     justify-content: flex-start;
+  }
+
+  .menu-open #wrapper {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-  }
-}
-
-#menu {
-  display: none;
-}
-@media screen and (max-width: 767px) {
-  #menu {
-    -webkit-box-ordinal-group: 9;
-    order: 8;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 1px;
-    height: 40px;
-  }
-  #menu .menu-inner {
-    -webkit-box-flex: 1;
-    flex: 1;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    height: 100%;
-    background: #fff;
-  }
-  .menu-open #menu .menu-inner {
-    background: #000;
-    border: 1px solid #fff;
-    color: #fff;
   }
 }
 
@@ -99,35 +65,42 @@
 }
 
 .preview {
-  position: absolute;
-  left: 5px;
-  text-align: center;
-  padding-top: 23px;
-  z-index: 100;
-  -webkit-transition: left 0.5s ease;
-  transition: left 0.5s ease;
+  height: 100vh;
+  position: fixed;
+  transition: width 1s;
 }
-
+.is-active .preview {
+  display: none;
+}
 .container {
-  height: 100%;
-  overflow: hidden;
   width: 2rem;
-  margin: 0 1px 0 0;
+  height: 100vh;
   -webkit-transition: width 0.5s ease;
   transition: width 0.5s ease;
   position: relative;
 }
 @media screen and (min-width: 768px) {
   .container {
+    .preview {
+      width: 2rem;
+      border: 1px solid $alianza-apple;
+    }
+
     &.inactive:hover {
       width: 3rem;
+      background: $alianza-apple;
+
+      .preview {
+        background: $alianza-apple;
+        color: #fff;
+      }
     }
   }
 }
 @media screen and (max-width: 767px) {
   .menu-open .container {
     height: calc((100% - 55px) / 8);
-    padding-bottom: 1px;
+    // padding-bottom: 1px;
     border-bottom: 1px solid $alianza-apple;
     color: $alianza-apple;
 
@@ -167,17 +140,30 @@
 
 @media screen and (max-width: 767px) {
   .preview {
-    position: static;
-    padding-top: 0;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    height: 100%;
-  }
-  body:not(.menu-open) .is-active .preview {
+    padding: 0.5rem;
     display: none;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    height: 100%;
+    span {
+      float: right;
+    }
+  }
+  .preview--inner {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: $alianza-apple;
+    width: calc(100% - 1rem);
+    span {
+      right: 0;
+    }
+  }
+  .menu-open {
+    .preview {
+      display: block;
+    }
   }
 }

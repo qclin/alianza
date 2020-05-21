@@ -8,39 +8,45 @@ const Themes = ({ dataEntries }) => {
   const [active, setActive] = useState(0)
   const [menuVisible, setMenuVisible] = useState(false)
   const themesPages = dataEntries.map(node => node.data)
-  console.log(themesPages)
+  themesPages.unshift({ Identifier: "00", Title: "about" })
+
   return (
     <div className={menuVisible ? "menu-open" : ""}>
       {active > 0 && <Player themeIndex={active} />}
       <section id="wrapper">
-        <About
-          active={active}
-          setActive={setActive}
-          setMenuVisible={setMenuVisible}
-        />
-        {dataEntries.map((node, index) => (
+        {themesPages.map((theme, index) => (
           <div
             className={
-              active === index + 1 && !menuVisible
+              active === index && !menuVisible
                 ? "is-active container"
                 : "inactive container"
             }
-            key={index + 1}
+            key={index}
           >
             <a
               className="container--inner"
-              href={`#${node.data.Identifier}`}
+              href={`#${theme.Identifier}`}
               onClick={() => {
-                setMenuVisible(!menuVisible)
-                setActive(index + 1)
+                if (menuVisible) {
+                  setMenuVisible(false)
+                }
+                setActive(index)
               }}
             >
-              <Theme
-                key={index}
-                data={node.data}
-                isActive={active === index + 1}
-                themeIndex={index + 1}
-              />
+              {index == 0 ? (
+                <About
+                  active={active}
+                  setActive={setActive}
+                  setMenuVisible={setMenuVisible}
+                />
+              ) : (
+                <Theme
+                  key={index}
+                  data={theme}
+                  isActive={active === index}
+                  themeIndex={index}
+                />
+              )}
             </a>
           </div>
         ))}
